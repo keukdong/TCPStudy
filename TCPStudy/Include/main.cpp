@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 #endif
 
 	// listen : 서버소켓과 5개의 클라이언트 요청을 받아들인다. 
-	if (listen(hServSock, 5) == SOCKET_ERROR)
+	if (listen(hServSock, 7) == SOCKET_ERROR)
 		error_handling("Listen failed");
 	else
 		print("Socket is Listening");

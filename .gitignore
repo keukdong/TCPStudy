@@ -1,0 +1,13 @@
+# comment
+# 확장자 obj 파일 무시
+*.obj
+# !something.obj : something.obj 파일무시하지 않음
+# Bin BinObj 폴더 무시
+/TCPStudy/BinObj/
+/TCPStudy/Bin/
+/TCPClient/BinObj/
+/TCPClient/Bin/
+.vs/
+# /TODO : Root 의 TODO폴더만 무시
+# TODO/ : TODO directory 전체 무시
+# doc/*.txt : doc/a.txt 파일같은 것만 무시
