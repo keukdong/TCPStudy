@@ -17,15 +17,15 @@ int main(int argc, char* argv[])
 	//char mesagge[] = "Hello World";
 	const char* mesagge = "HelloWorld";
 
-	// ÇÁ·Î±×·¥¿¡¼­ ¿ä±¸ÇÏ´Â À©µµ¿ì ¼ÒÄÏÀÇ ¹öÀüÀ» ¾Ë¸®°í, ÇØ´ç ¹öÀüÀ» Áö¿øÇÏ´Â ¶óÀÌºê·¯¸®ÀÇ ÃÊ±âÈ­ ÀÛ¾÷
+	// ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ä±¸ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½, ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ìºê·¯ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½
 	// LPWSADATA = WSADATA*
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		error_handling("WSAStartup() error!");
 	else
 		print("WSAStartup()");
 
-	//////////////////////////////// ¼ÒÄÏ ÇÁ·Î±×·¡¹Ö /////////////////////////////////////////
-	// ¼ÒÄÏ »ý¼º
+	//////////////////////////////// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ /////////////////////////////////////////
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	hServSock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 	
 	if (hServSock == INVALID_SOCKET)
@@ -33,14 +33,14 @@ int main(int argc, char* argv[])
 	else
 		print("Socket Create");
 
-	// ¼ÒÄÏ¿¡ Æ÷Æ®¹øÈ£, IP¸¦ ÇÒ´çÇÑ´Ù.
+	// ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½È£, IPï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Ñ´ï¿½.
 #ifdef _WINSOCKET
-	// window Á¾¼Ó
-	// 1. LPTSTR ip¿Í port ¹øÈ£´ã°íÀÖ´Â ¹®ÀÚ¿­ ÁÖ¼Ò
+	// window ï¿½ï¿½ï¿½ï¿½
+	// 1. LPTSTR ipï¿½ï¿½ port ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½
 	// 2. int addressFamily 
-	// 3. LPWSAPROTOCOL_INFO ÇÁ·ÎÅäÄÝ Á¦°øÀÚ ¼³Á¤, ÀÏ¹ÝÀûÀ¸·Î NULL
-	// 4. LPSOCKADDR ÁÖ¼Ò Á¤º¸¸¦ ´ãÀ» ±¸Á¶Ã¼ º¯¼öÀÇ ÁÖ¼Ò
-	// 5. LPINT 4¹øÀÇ ÀÎÀÚ°¡ °¡¸£Å°´Â º¯¼ö Å©±â¸¦ ´ã°íÀÖ´Â º¯¼öÀÇ ÁÖ¼Ò°ª
+	// 3. LPWSAPROTOCOL_INFO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NULL
+	// 4. LPSOCKADDR ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½
+	// 5. LPINT 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½
 
 	// LPWSTR  = WCHAR*
 	wchar_t host[50] = { 0, };
@@ -61,8 +61,8 @@ int main(int argc, char* argv[])
 #else
 	// hton, ntoh : endian conversion
 	memset(&tServAddr, 0, sizeof(SOCKADDR_IN));
-	tServAddr.sin_family = AF_INET;		// ÁÖ¼ÒÃ¼°è
-	tServAddr.sin_addr.s_addr = htonl(INADDR_ANY);	// 32ºñÆ® IPÁÖ¼Ò : INADDR_ANY 
+	tServAddr.sin_family = AF_INET;		// ï¿½Ö¼ï¿½Ã¼ï¿½ï¿½
+	tServAddr.sin_addr.s_addr = htonl(INADDR_ANY);	// 32ï¿½ï¿½Æ® IPï¿½Ö¼ï¿½ : INADDR_ANY 
 
 	const char *host = "127.0.0.1";
 	unsigned long conv_addr = inet_addr(host);
@@ -72,15 +72,16 @@ int main(int argc, char* argv[])
 	else
 		printf("networkd ordered integer addr :  %#lx \n", conv_addr);
 
-	tServAddr.sin_port = htons(atoi("5001"));		// 16ºñÆ® Æ÷Æ®¹øÈ£  
-	// tServAddr.sin_zero  // sin_zero[8] : ¾È¾²Áö¸¸ 0À¸·Î ÃÊ±âÈ­ ÇØ³ö¾ßÇÔ
+	tServAddr.sin_port = htons(atoi("5001"));		// 16ï¿½ï¿½Æ® ï¿½ï¿½Æ®ï¿½ï¿½È£  
+	// tServAddr.sin_zero  // sin_zero[8] : ï¿½È¾ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	if (bind(hServSock, (SOCKADDR*)&tServAddr, sizeof(tServAddr)) == SOCKET_ERROR)
 		error_handling("Bind failed");
 #endif
 
-	// listen : ¼­¹ö¼ÒÄÏ°ú 5°³ÀÇ Å¬¶óÀÌ¾ðÆ® ¿äÃ»À» ¹Þ¾ÆµéÀÎ´Ù. 
-	if (listen(hServSock, 7) == SOCKET_ERROR)
+	// listen : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ 5ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Þ¾Æµï¿½ï¿½Î´ï¿½. 
+	// 7->10
+	if (listen(hServSock, 10) == SOCKET_ERROR)
 		error_handling("Listen failed");
 	else
 		print("Socket is Listening");
@@ -88,7 +89,7 @@ int main(int argc, char* argv[])
 	while (1)
 	{
 		// accept
-		// Å¬¶óÀÌ¾ðÆ® ÇÁ·Î±×·¥¿¡¼­ÀÇ ¿¬°á ¿äÃ»À» ¼ö¶ôÇÒ ¶§ È£ÃâÇÏ´Â ÇÔ¼ö
+		// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 		int clientsize = sizeof(tClinetAddr);
 		hClientSock = accept(hServSock, (SOCKADDR *)&tClinetAddr, &clientsize);
 
@@ -110,7 +111,7 @@ int main(int argc, char* argv[])
 	if(closesocket(hClientSock) ==0 && closesocket(hServSock) == 0)
 		print("Close Socket");
 
-	//À©µµ¿ì ¶óÀÌºê·¯¸®¸¦ À©µµ¿ì ¿î¿µÃ¼Á¦¿¡ ¹ÝÈ¯, À©¼Ó°ü·Ã ÇÔ¼öÀÇ È£ÃâÀÌ ºÒ°¡´ÉÇØÁø´Ù.
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºê·¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¿µÃ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯, ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	if (WSACleanup() == SOCKET_ERROR)
 		error_handling("WSACleanup Failed");
 	else
